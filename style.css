@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 10px;
+
+    /* text color */
+    /* primary */
+    --VDDB: hsl(238, 29%, 16%);
+    --SR: hsl(14, 88%, 65%);
+
+    /* neutral */
+    --VDGB: hsl(237, 12%, 33%);
+    --DGB: hsl(240, 6%, 50%);
+
+    /* divider */
+    --LGB: hsl(240, 5%, 91%);
+
+    /* background color  gradient*/
+    --SV: hsl(273, 75%, 66%);
+    --SB: hsl(240, 73%, 65%);
+
+}
+
+body {
+    background-image: linear-gradient(to bottom, var(--SV), var(--SB));
+    height: 100Vh;
+    width: 100vw;
+}
+
+.main {
+    width: 65%;
+    height: 470px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 20px;
+    background: url(bg-pattern-desktop.svg), #fff;
+    background-repeat: no-repeat;
+    background-position: left -200% bottom -70px;
+    background-size: 80%;
+
+    z-index: 22;
+}
+
+.main-container {
+    width: 100%;
+}
+
+.floater-container {
+    width: 100%;
+}
+
+.floater-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Left container */
+.left-container {
+    float: left;
+    width: 50%;
+    height: 500px;
+    position: relative;
+
+}
+
+.left-container > img {
+    position: absolute;
+    top: 50%;
+    left: -93px;
+    transform: translateY(-50%);
+}
+
+.image-container {
+    background-image: url(illustration-woman-online-desktop.svg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: left -80px top 20%;
+}
+
+/* Right container */
+.right-container {
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+.text-container {
+    width: 100%;
+    padding: 70px 70px 70px 50px;
+}
+
+.heading {
+    font-size: 1.8rem;
+    padding-bottom: 15px;
+}
+
+.questions-container {
+    width: 100%;
+}
+
+.question {
+    border-bottom: 1px solid var(--LGB);
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+/* This was done using Js */
+/* .question:hover .the-question {
+    color: var(--SR);
+} */
+
+.the-question {
+    font-size: 1.5rem;
+    padding-bottom: 7px;
+}
+
+.the-question::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+h4 {
+    color: var(--DGB);
+    font-weight: 400;
+    float: left;
+}
+
+.the-question > img {
+    float: right;
+    padding-top: 3px;
+    padding-left: 5px;
+    transition: transform 500ms;
+    user-select: none;
+}
+
+/* This was done using js */
+/* .the-question > img:hover {
+    transform: scale(-1);
+} */
+
+.the-answer {
+    font-size: 1.1rem;
+    font-weight: 100;
+    line-height: 1.5;
+    height: 0;
+    overflow: hidden;
+    transition: height 1s;
+}
+
+/* This was done using Js */
+/* .question:hover .the-answer {
+    color: var(--SR);
+    height: max-content;
+} */
+
+.close-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    /* z-index: -222; */
+}
+
+/* For Media screen of max-width: 1200px */
+@media screen and (max-width: 1200px) {
+    .main {
+        width: 80%;
+        height: 450px;
+        background-position: left -120% bottom 10px;
+    background-size: 70%;
+    }
+
+    .left-container > img {
+        position: absolute;
+        top: 42%;
+        left: -93px;
+        transform: translateY(-45%);
+    }
+    
+    .image-container {
+        background-image: url(illustration-woman-online-desktop.svg);
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: left -45px top 20%;
+        background-size: 90%;
+    }
+
+    .text-container {
+        padding: 50px 50px 50px 30px;
+    }
+
+    .the-question {
+        font-size: 1.5rem;
+        padding-bottom: 4px;
+    }
+
+}
+
+/* For Media screen of max-width: 920px */
+@media screen and (max-width: 920px) {
+    .main {
+        height: 370px;
+    }
+    .text-container {
+        padding: 30px 30px 30px 10px;
+    }
+
+    .the-question {
+        font-size: 1.4rem;
+    }
+}
+
+/* For Media screen of max-width: 768px */
+@media screen and (max-width: 768px) {
+    .main {
+        width: 85%;
+    }
+
+    .left-container > img {
+        top: 30%;
+        transform: translateY(-30%);
+        width: 150px;
+        left: -72px;
+    }
+
+    .text-container {
+        padding: 30px 30px 30px 0px;
+    }
+}
+
+/* For Media screen of max-width: 700px */
+@media screen and (max-width: 700px) {
+    .main {
+        height: max-content;
+        width: 65%;
+        background-image: none;
+        margin-top: 50px;
+    }
+
+    .floater-container {
+        position: relative;
+    }
+
+    .left-container {
+        float: none;
+        height: 300px;
+        position: absolute;
+        width: 100%;
+        top: -170px;
+
+        background-image: url(bg-pattern-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+
+    .left-container > img {
+        display: none;
+    }
+
+    .image-container {
+        background-image: url(illustration-woman-online-mobile.svg);
+        background-size: 65%;
+        background-position: center;
+    }
+
+
+    .right-container {
+        float: none;
+        width: 100%;
+        padding-top: 140px;
+    }
+
+    .text-container {
+        padding: 40px;
+    }
+
+    .heading {
+        text-align: center;
+    }
+}
+
+/* For Media screen of max-width: 540px */
+@media screen and (max-width: 540px) {
+    .main {
+        margin-top: 50px;
+        width: 75%;
+    }
+}
+
+/* For Media screen of max-width: 475px */
+@media screen and (max-width: 475px) {
+    .main {
+        width: 85%;
+    }
+}
+
+/* For Media screen of max-width: 410px */
+@media screen and (max-width: 410px) {
+    .main {
+        width: 88%;
+        margin-top: 30px;
+    }
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    .text-container {
+        padding: 30px;
+        padding-bottom: 50px;
+        margin-top: -40px;
+    }
+
+    .left-container {
+        background-position: bottom 30px left 50%;
+    }
+}
